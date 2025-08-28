@@ -6,9 +6,6 @@ import SwiftUI
 
 @MainActor
 class ToastWindowController {
-    @AppStorage("showToastNotifications") var showToastNotifications = true
-    @AppStorage("autoDismissTimer") var autoDismissTimer: DismissTimer = .seconds3
-
     enum DismissTimer: String, CaseIterable, Identifiable {
         case seconds2 = "2 Seconds"
         case seconds3 = "3 Seconds"

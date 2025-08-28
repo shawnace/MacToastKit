@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct ToastView: View {
-    @AppStorage("dismissOnClick") var dismissOnClick = true
-
     let message: String
     let icon: Image?
     weak var panel: NSPanel?
