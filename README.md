@@ -37,6 +37,8 @@ struct MyApp: App {
 }
 ```
 
+### Parameters
+
 The **showToast()** function supports parameters to control what it displays and how it behaves.
 
 - **message:** A string that describes the purpose of the toast
