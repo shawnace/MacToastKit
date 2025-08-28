@@ -38,11 +38,11 @@ struct MacToastKitTests {
         toast.showToast(
             message: "Increase the Duration!",
             icon: Image(systemName: "timer"),
-            duration: 7,
+            duration: 5,
             position: .topRight(12)
         )
 
-        try await Task.sleep(for: .seconds(7))
+        try await Task.sleep(for: .seconds(5))
     }
 
     // MARK: Real Examples
@@ -74,7 +74,7 @@ struct MacToastKitTests {
     @Test("Toast -  Caffeinate your Mac")
     func toastCaffeinate() async throws {
         toast.showToast(
-            message: "Caffeinate Turned On",
+            message: "Caffeinate Enabled",
             icon: Image(systemName: "powerplug.fill"),
             duration: 3,
             position: .bottomCenter(100)
