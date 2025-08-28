@@ -13,7 +13,18 @@ class ToastWindowController {
     private var panel: NSPanel?
     private var timer: Timer?
 
-    func showToast(message: String, icon: Image? = nil, duration: TimeInterval? = nil) {
+    public enum ToastPosition {
+        case top(CGFloat)
+        case center
+        case bottom(CGFloat)
+    }
+
+    func showToast(
+        message: String,
+        icon: Image? = nil,
+        duration: TimeInterval? = nil,
+        position: ToastPosition = .bottom(100)
+    ) {
         if panel == nil {
             let toastView = ToastView(message: message, icon: icon, panel: nil)
 
@@ -42,7 +53,15 @@ class ToastWindowController {
 
         if let screenFrame = NSScreen.main?.visibleFrame, let panel = panel {
             let x = screenFrame.midX - panel.frame.width / 2
-            let y = screenFrame.minY + 100
+            let y: CGFloat
+            switch position {
+            case .top(let offset):
+                y = screenFrame.maxY - panel.frame.height - offset
+            case .center:
+                y = screenFrame.midY
+            case .bottom(let offset):
+                y = screenFrame.minY + offset
+            }
             panel.setFrameOrigin(NSPoint(x: x, y: y))
             panel.alphaValue = 0
             panel.orderFrontRegardless()
