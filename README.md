@@ -78,7 +78,7 @@ func showErrorToast(_ message: String = "Action Failed", icon: Image? = nil) {
 
 ## Example Projects
 
-- [**SuperCorners**](https://github.com/daniyalmaster693/SuperCorners)
+- [SuperCorners](https://github.com/daniyalmaster693/SuperCorners)
 
 # License
 
