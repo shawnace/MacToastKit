@@ -10,6 +10,15 @@ Compatibility: **macOS 13+**
 
 Add `https://github.com/daniyalmaster693/MacToastKit` in the [“Swift Package Manager” tab in Xcode](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app).
 
+## Features
+
+- Minimal and Native Design
+- Customizable Messages and Icons
+- Customizable durations
+- Adjustable Positioning
+- Dismiss to Click
+- Show's on active display
+
 ## Usage
 
 Call the showToast() function when you want to display a message. That's it.
