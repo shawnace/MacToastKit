@@ -9,7 +9,7 @@ import AppKit
 import SwiftUI
 
 @MainActor
-class ToastWindowController {
+public class ToastWindowController {
     private var panel: NSPanel?
 
     // MARK: Toast Positions
@@ -24,6 +24,8 @@ class ToastWindowController {
         case bottomCenter(CGFloat)
     }
 
+    public init() {}
+
     // MARK: Show Toast Function
 
 //       MARK: Parameters:
@@ -33,7 +35,7 @@ class ToastWindowController {
 //        - duration: An optional double value that controls how long the toast will be visible
 //        - position: Controls the position of the toast on the user's screen, with an offset parameter
 
-    func showToast(
+    public func showToast(
         message: String,
         icon: Image? = nil,
         duration: TimeInterval? = nil,
