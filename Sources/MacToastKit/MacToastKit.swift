@@ -14,9 +14,13 @@ class ToastWindowController {
     private var timer: Timer?
 
     public enum ToastPosition {
-        case top(CGFloat)
+        case topLeft(CGFloat)
+        case topRight(CGFloat)
+        case topCenter(CGFloat)
         case center
-        case bottom(CGFloat)
+        case bottomLeft(CGFloat)
+        case bottomRight(CGFloat)
+        case bottomCenter(CGFloat)
     }
 
     func showToast(
@@ -52,14 +56,30 @@ class ToastWindowController {
         }
 
         if let screenFrame = NSScreen.main?.visibleFrame, let panel = panel {
-            let x = screenFrame.midX - panel.frame.width / 2
+            let x: CGFloat
             let y: CGFloat
+
             switch position {
-            case .top(let offset):
+            case .topLeft(let offset):
+                x = screenFrame.minX + offset
+                y = screenFrame.maxY - panel.frame.height - offset
+            case .topRight(let offset):
+                x = screenFrame.maxX - panel.frame.width - offset
+                y = screenFrame.maxY - panel.frame.height - offset
+            case .topCenter(let offset):
+                x = screenFrame.midX - panel.frame.width / 2
                 y = screenFrame.maxY - panel.frame.height - offset
             case .center:
-                y = screenFrame.midY
-            case .bottom(let offset):
+                x = screenFrame.midX - panel.frame.width / 2
+                y = screenFrame.midY - panel.frame.height / 2
+            case .bottomLeft(let offset):
+                x = screenFrame.minX + offset
+                y = screenFrame.minY + offset
+            case .bottomRight(let offset):
+                x = screenFrame.maxX - panel.frame.width - offset
+                y = screenFrame.minY + offset
+            case .bottomCenter(let offset):
+                x = screenFrame.midX - panel.frame.width / 2
                 y = screenFrame.minY + offset
             }
             panel.setFrameOrigin(NSPoint(x: x, y: y))
