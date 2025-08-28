@@ -80,6 +80,6 @@ func showErrorToast(_ message: String = "Action Failed", icon: Image? = nil) {
 
 - [SuperCorners](https://github.com/daniyalmaster693/SuperCorners)
 
-# License
+## License
 
 This project is licensed under the [MIT license](LICENSE).
