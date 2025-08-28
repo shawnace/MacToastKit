@@ -11,7 +11,8 @@ import SwiftUI
 @MainActor
 class ToastWindowController {
     private var panel: NSPanel?
-    private var timer: Timer?
+
+    // MARK: Toast Positions
 
     public enum ToastPosition {
         case topLeft(CGFloat)
@@ -22,6 +23,8 @@ class ToastWindowController {
         case bottomRight(CGFloat)
         case bottomCenter(CGFloat)
     }
+
+    // MARK: Show Toast Function
 
     func showToast(
         message: String,
@@ -55,6 +58,8 @@ class ToastWindowController {
             }
         }
 
+        // MARK: Position Calculations
+
         if let screenFrame = NSScreen.main?.visibleFrame, let panel = panel {
             let x: CGFloat
             let y: CGFloat
@@ -82,6 +87,9 @@ class ToastWindowController {
                 x = screenFrame.maxX - panel.frame.width - offset
                 y = screenFrame.minY + offset
             }
+
+            // MARK: Fade-in/out Animation
+
             panel.setFrameOrigin(NSPoint(x: x, y: y))
             panel.alphaValue = 0
             panel.orderFrontRegardless()
