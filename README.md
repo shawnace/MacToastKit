@@ -54,22 +54,26 @@ You can create template toasts for messages that are repeatedly used throughout 
 import SwiftUI
 import MacToastKit
 
-func showSuccessToast(_ message: String = "Action Completed", icon: Image? = nil) {
+func showSuccessToast(_ message: String = "Action Completed", icon: Image? = nil, duration: 3, position: .bottomCenter(100)) {
     DispatchQueue.main.async {
         let toast = ToastWindowController()
         toast.showToast(
             message: message,
-            icon: icon ?? Image(systemName: "checkmark.circle.fill")
+            icon: icon ?? Image(systemName: "checkmark.circle.fill"),
+            duration: duration,
+            position: position
         )
     }
 }
 
-func showErrorToast(_ message: String = "Action Failed", icon: Image? = nil) {
+func showErrorToast(_ message: String = "Action Failed", icon: Image? = nil, duration: 3, position: .bottomCenter(100)) {
     DispatchQueue.main.async {
         let toast = ToastWindowController()
         toast.showToast(
             message: message,
-            icon: icon ?? Image(systemName: "x.circle.fill")
+            icon: icon ?? Image(systemName: "x.circle.fill"),
+            duration: duration,
+            position: position
         )
     }
 }
