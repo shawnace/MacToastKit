@@ -37,6 +37,41 @@ struct MyApp: App {
 }
 ```
 
+The showToast function also supports parameters to control how it looks.
+
+- message: A string that describes the purpose of the toast
+- icon: An optional icon that displays with the text
+- duration: An optional double that controls how long the toast will be visible
+- position: Controls the position of the toast on the user's screen, with an offset parameter
+
+### Template Toasts
+
+```swift
+import SwiftUI
+import MacToastKit
+
+func showSuccessToast(_ message: String = "Action Completed", icon: Image? = nil) {
+    DispatchQueue.main.async {
+        let toast = ToastWindowController()
+        toast.showToast(
+            message: message,
+            icon: icon ?? Image(systemName: "checkmark.circle.fill")
+        )
+    }
+}
+
+func showErrorToast(_ message: String = "Action Failed", icon: Image? = nil) {
+    DispatchQueue.main.async {
+        let toast = ToastWindowController()
+        toast.showToast(
+            message: message,
+            icon: icon ?? Image(systemName: "x.circle.fill")
+        )
+    }
+}
+
+```
+
 # License
 
 This project is licensed under the [MIT license](LICENSE).
