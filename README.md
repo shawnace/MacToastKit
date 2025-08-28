@@ -20,17 +20,20 @@ import MacToastKit
 
 @main
 struct MyApp: App {
-	var body: some Scene {
-    Button("Delete task") {
-       let toast = ToastWindowController()
-        toast.showToast(
-            message: "Deleted Task",
-            icon: Image(systemName: "trash.fill"),
-            duration: 3,
-            position: .bottomCenter(100)
-        )
+    var body: some Scene {
+        WindowGroup {
+            Button("Delete task") {
+                let toast = ToastWindowController()
+
+                  toast.showToast(
+                    message: "Deleted Task",
+                    icon: Image(systemName: "trash.fill"),
+                    duration: 3,
+                    position: .bottomCenter(100)
+                )
+            }
+        }
     }
-	}
 }
 ```
 
