@@ -1,8 +1,8 @@
 # MacToastKit
 
-<img src="/Assets/Screenshots/MacToastKit-1.png" width="100%" alt="MacToastKit"/>
-
 MacToastKit provides an easy and minimal way to include toast messages in your mac app. It focuses on giving developers an easy way to provide visual feedback to users with minimal effort.
+
+<img src="/Assets/Screenshots/MacToastKit-1.png" width="100%" alt="MacToastKit"/>
 
 ## Install
 
