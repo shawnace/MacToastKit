@@ -25,16 +25,14 @@ struct ToastView: View {
                 .multilineTextAlignment(.leading)
         }
         .onTapGesture {
-            if dismissOnClick {
-                guard let panel = panel else { return }
-                NSAnimationContext.runAnimationGroup({ context in
-                    context.duration = 0.3
-                    context.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-                    panel.animator().alphaValue = 0
-                }, completionHandler: {
-                    panel.orderOut(nil)
-                })
-            }
+            guard let panel = panel else { return }
+            NSAnimationContext.runAnimationGroup({ context in
+                context.duration = 0.3
+                context.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+                panel.animator().alphaValue = 0
+            }, completionHandler: {
+                panel.orderOut(nil)
+            })
         }
         .padding(.horizontal, 20)
         .padding(.vertical, 10)
