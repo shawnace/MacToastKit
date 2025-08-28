@@ -90,7 +90,7 @@ func showErrorToast(
 
 ```
 
-## Example Projects
+## Showcase
 
 - [SuperCorners](https://github.com/daniyalmaster693/SuperCorners)
 
