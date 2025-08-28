@@ -10,8 +10,6 @@ class ToastWindowController {
     private var timer: Timer?
 
     func showToast(message: String, icon: Image? = nil, duration: TimeInterval? = nil) {
-        guard showToastNotifications else { return }
-
         if panel == nil {
             let toastView = ToastView(message: message, icon: icon, panel: nil)
 
@@ -45,7 +43,7 @@ class ToastWindowController {
             panel.alphaValue = 0
             panel.orderFrontRegardless()
 
-            let displayDuration = duration ?? autoDismissTimer.duration
+            let displayDuration: TimeInterval = 3
 
             NSAnimationContext.runAnimationGroup({ context in
                 context.duration = 0.3
