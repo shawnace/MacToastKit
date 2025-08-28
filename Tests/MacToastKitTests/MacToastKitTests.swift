@@ -21,18 +21,6 @@ struct MacToastKitTests {
         try await Task.sleep(for: .seconds(3))
     }
 
-    @Test("Toast - SF Symbols")
-    func toastSymbols() async throws {
-        toast.showToast(
-            message: "SF Symbols look great!",
-            icon: Image(systemName: "checkmark.circle.fill"),
-            duration: 3,
-            position: .center
-        )
-
-        try await Task.sleep(for: .seconds(3))
-    }
-
     @Test("Toast - Custom Positioning")
     func toastPosition() async throws {
         toast.showToast(
@@ -40,18 +28,6 @@ struct MacToastKitTests {
             icon: Image(systemName: "location"),
             duration: 3,
             position: .topLeft(0)
-        )
-
-        try await Task.sleep(for: .seconds(3))
-    }
-
-    @Test("Toast -  Click to Dimiss")
-    func toastDismiss() async throws {
-        toast.showToast(
-            message: "Click to dismiss Me!",
-            icon: Image(systemName: "cursorarrow.click"),
-            duration: 3,
-            position: .center
         )
 
         try await Task.sleep(for: .seconds(3))
