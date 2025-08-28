@@ -37,14 +37,16 @@ struct MyApp: App {
 }
 ```
 
-The showToast function also supports parameters to control how it looks.
+The showToast function supports parameters to control what it displays.
 
 - message: A string that describes the purpose of the toast
 - icon: An optional icon that displays with the text
-- duration: An optional double that controls how long the toast will be visible
+- duration: An optional double value that controls how long the toast will be visible
 - position: Controls the position of the toast on the user's screen, with an offset parameter
 
 ### Template Toasts
+
+You can create template toasts for messages that are repeatedly used throughout your app.
 
 ```swift
 import SwiftUI
@@ -71,6 +73,10 @@ func showErrorToast(_ message: String = "Action Failed", icon: Image? = nil) {
 }
 
 ```
+
+## Example Projects
+
+- [**SuperCorners**](https://github.com/daniyalmaster693/SuperCorners)
 
 # License
 
