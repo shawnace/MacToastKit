@@ -10,6 +10,7 @@ import SwiftUI
 
 @MainActor
 public class ToastWindowController {
+    public init() {}
     private var panel: NSPanel?
 
     // MARK: Toast Positions
@@ -23,8 +24,6 @@ public class ToastWindowController {
         case bottomRight(CGFloat)
         case bottomCenter(CGFloat)
     }
-
-    public init() {}
 
     // MARK: Show Toast Function
 
