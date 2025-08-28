@@ -43,7 +43,7 @@ class ToastWindowController {
             panel.alphaValue = 0
             panel.orderFrontRegardless()
 
-            let displayDuration: TimeInterval = 3
+            let displayDuration = duration ?? 3
 
             NSAnimationContext.runAnimationGroup({ context in
                 context.duration = 0.3
