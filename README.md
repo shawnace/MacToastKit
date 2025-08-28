@@ -2,7 +2,7 @@
 
 A minimal toast library for macOS
 
-<img src="/Assets/Screenshots/MacToastKit-1.webp" width="100%" alt="MacToastKit"/>
+<img src="/Assets/Screenshots/MacToastKit-1.webp" width="50%" alt="MacToastKit"/>
 
 ## Requirements
 
