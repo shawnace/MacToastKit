@@ -26,6 +26,13 @@ class ToastWindowController {
 
     // MARK: Show Toast Function
 
+//       MARK: Parameters:
+
+//        - message: A string that describes the purpose of the toast
+//        - icon: An optional icon that displays with the text
+//        - duration: An optional double that controls how long the toast will be visible
+//        - position: Controls the position of the toast on the user's screen, with an offset parameter
+
     func showToast(
         message: String,
         icon: Image? = nil,
