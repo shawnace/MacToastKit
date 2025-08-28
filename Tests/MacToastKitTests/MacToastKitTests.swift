@@ -47,18 +47,6 @@ struct MacToastKitTests {
 
     // MARK: Real Examples
 
-    @Test("Toast -  Toggle Light Theme")
-    func toastLightMode() async throws {
-        toast.showToast(
-            message: "Toggled Light Mode",
-            icon: Image(systemName: "sun.max.fill"),
-            duration: 3,
-            position: .bottomRight(50)
-        )
-
-        try await Task.sleep(for: .seconds(3))
-    }
-
     @Test("Toast -  Airpods Connected")
     func toastAirpods() async throws {
         toast.showToast(
@@ -66,6 +54,18 @@ struct MacToastKitTests {
             icon: Image(systemName: "airpodsmax"),
             duration: 3,
             position: .topCenter(15)
+        )
+
+        try await Task.sleep(for: .seconds(3))
+    }
+
+    @Test("Toast -  Toggle Light Theme")
+    func toastLightMode() async throws {
+        toast.showToast(
+            message: "Toggled Light Mode",
+            icon: Image(systemName: "sun.max.fill"),
+            duration: 3,
+            position: .bottomRight(50)
         )
 
         try await Task.sleep(for: .seconds(3))
