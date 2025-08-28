@@ -27,7 +27,7 @@ class ToastWindowController {
         message: String,
         icon: Image? = nil,
         duration: TimeInterval? = nil,
-        position: ToastPosition = .bottom(100)
+        position: ToastPosition = .bottomCenter(100)
     ) {
         if panel == nil {
             let toastView = ToastView(message: message, icon: icon, panel: nil)
@@ -63,11 +63,11 @@ class ToastWindowController {
             case .topLeft(let offset):
                 x = screenFrame.minX + offset
                 y = screenFrame.maxY - panel.frame.height - offset
-            case .topRight(let offset):
-                x = screenFrame.maxX - panel.frame.width - offset
-                y = screenFrame.maxY - panel.frame.height - offset
             case .topCenter(let offset):
                 x = screenFrame.midX - panel.frame.width / 2
+                y = screenFrame.maxY - panel.frame.height - offset
+            case .topRight(let offset):
+                x = screenFrame.maxX - panel.frame.width - offset
                 y = screenFrame.maxY - panel.frame.height - offset
             case .center:
                 x = screenFrame.midX - panel.frame.width / 2
@@ -75,11 +75,11 @@ class ToastWindowController {
             case .bottomLeft(let offset):
                 x = screenFrame.minX + offset
                 y = screenFrame.minY + offset
-            case .bottomRight(let offset):
-                x = screenFrame.maxX - panel.frame.width - offset
-                y = screenFrame.minY + offset
             case .bottomCenter(let offset):
                 x = screenFrame.midX - panel.frame.width / 2
+                y = screenFrame.minY + offset
+            case .bottomRight(let offset):
+                x = screenFrame.maxX - panel.frame.width - offset
                 y = screenFrame.minY + offset
             }
             panel.setFrameOrigin(NSPoint(x: x, y: y))
