@@ -1,3 +1,3 @@
 # MacToastKit
 
-A simple swift toast library for macOS
+A minimal toast library for macOS
