@@ -12,6 +12,8 @@ struct ToastView: View {
     let icon: Image?
     weak var panel: NSPanel?
 
+    // MARK: Toast View
+
     var body: some View {
         HStack(spacing: 12) {
             if let icon = icon {

@@ -24,7 +24,7 @@ struct MacToastKitTests {
     @Test("Toast - Custom Positioning")
     func toastPosition() async throws {
         toast.showToast(
-            message: "You can change the position too!",
+            message: "You can change the position too",
             icon: Image(systemName: "location"),
             duration: 3,
             position: .topLeft(0)
@@ -33,10 +33,21 @@ struct MacToastKitTests {
         try await Task.sleep(for: .seconds(3))
     }
 
+    @Test("Toast - No Icon")
+    func toastNoIcon() async throws {
+        toast.showToast(
+            message: "You can use it without an icon",
+            duration: 3,
+            position: .center
+        )
+
+        try await Task.sleep(for: .seconds(3))
+    }
+
     @Test("Toast - Custom Durations")
     func toastDuration() async throws {
         toast.showToast(
-            message: "Increase the Duration!",
+            message: "Increase or Decrease the Duration",
             icon: Image(systemName: "timer"),
             duration: 5,
             position: .topRight(12)
