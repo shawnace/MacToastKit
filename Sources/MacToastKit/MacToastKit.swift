@@ -1,5 +1,9 @@
-// The Swift Programming Language
-// https://docs.swift.org/swift-book
+//
+//  MacToastKit.swift
+//  MacToastKit
+//
+//  Created by Daniyal Master on 2025-08-28.
+//
 
 import AppKit
 import SwiftUI
@@ -9,7 +13,7 @@ class ToastWindowController {
     private var panel: NSPanel?
     private var timer: Timer?
 
-    func showToast(message: String, icon: Image? = nil, duration: TimeInterval? = nil) {
+    func showToast(message: String, icon: Image? = nil, duration: TimeInterval? = nil, animationDuration: TimeInterval? = nil) {
         if panel == nil {
             let toastView = ToastView(message: message, icon: icon, panel: nil)
 
@@ -44,15 +48,16 @@ class ToastWindowController {
             panel.orderFrontRegardless()
 
             let displayDuration = duration ?? 3
+            let animateDuration = animationDuration ?? 0.3
 
             NSAnimationContext.runAnimationGroup({ context in
-                context.duration = 0.3
+                context.duration = animateDuration
                 context.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
                 panel.animator().alphaValue = 1
             }, completionHandler: {
                 DispatchQueue.main.asyncAfter(deadline: .now() + displayDuration) {
                     NSAnimationContext.runAnimationGroup({ context in
-                        context.duration = 0.3
+                        context.duration = animateDuration
                         context.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
                         panel.animator().alphaValue = 0
                     }, completionHandler: {
