@@ -13,7 +13,7 @@ class ToastWindowController {
     private var panel: NSPanel?
     private var timer: Timer?
 
-    func showToast(message: String, icon: Image? = nil, duration: TimeInterval? = nil, animationDuration: TimeInterval? = nil) {
+    func showToast(message: String, icon: Image? = nil, duration: TimeInterval? = nil) {
         if panel == nil {
             let toastView = ToastView(message: message, icon: icon, panel: nil)
 
@@ -48,7 +48,7 @@ class ToastWindowController {
             panel.orderFrontRegardless()
 
             let displayDuration = duration ?? 3
-            let animateDuration = animationDuration ?? 0.3
+            let animateDuration = 0.3
 
             NSAnimationContext.runAnimationGroup({ context in
                 context.duration = animateDuration
